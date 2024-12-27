@@ -497,7 +497,6 @@ footer p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: white;
         font-size: 1rem;
         margin-top: 1vh;
     }
@@ -505,7 +504,7 @@ footer p {
     nav a {
         margin: 1vh 0;
         text-decoration: none;
-        color: #333;
+        color: white;
         font-weight: bold;
     }
 
@@ -544,15 +543,15 @@ footer p {
         height: auto;
         object-fit: cover;
         border-radius: 8px;
-        animation: slideImages 12s infinite;
+        animation: slideImages 20s infinite;
     }
 
     .image-slider div img:nth-child(2) {
-        animation-delay: 4s;
+        animation-delay: 7s;
     }
 
     .image-slider div img:nth-child(3) {
-        animation-delay: 8s;
+        animation-delay: 14s;
     }
 
     @keyframes slideImages {
@@ -567,12 +566,12 @@ footer p {
     /* Audio Toggle Button */
     #audio-toggle {
         position: absolute;
-        top: 10vh; /* Position it further down on the screen */
+        top: 15vh; /* Position it further down on the screen */
         left: 50%;
         transform: translateX(-50%); /* Center it horizontally */
         padding: 1.5vh 3vw;
         font-size: 1rem;
-        background-color: #333;
+        background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
@@ -581,7 +580,7 @@ footer p {
     }
 
     #audio-toggle:hover {
-        background-color: #555;
+        background-color: #45a049;
     }
 
     /* Floating images */
