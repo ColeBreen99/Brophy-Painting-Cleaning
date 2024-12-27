@@ -1,0 +1,160 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background: linear-gradient(90deg, #1a1919, #2b2a2a);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 20px;
+}
+nav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle; /* Align vertically */
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative; /* Enables dropdown-menu to position relative to parent */
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    z-index: 1000;
+    width: 150px; /* Optional: Adjust width */
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Display dropdown menu when hovering over parent .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px, 1fr)); /* Automatically adjusts columns based on available space */
+    gap: 20px; /* Space between testimonials */
+    justify-content: center;
+}
+
+.testimonial-item {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    border: Solid 3px Black;
+}
+
+.testimonial-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.client-photo {
+    border-radius: 50%; /* Makes the image circular */
+    width: 80px !important; /* Force width */
+    height: 80px !important; /* Force height */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    margin-bottom: 20px;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Footer Section */
+.footer {
+    background: #1a1919;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+.content {
+    position: relative; /* This allows the image to float relative to this container */
+}
+
+.floating-image {
+    position: absolute;
+    bottom: -14.5vh;
+    left: 10px; /* Instead of left, use right to place it on the right side */
+    width: 15vw;
+    height: auto;
+}

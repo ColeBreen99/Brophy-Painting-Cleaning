@@ -1,0 +1,607 @@
+html, body {
+    height: 100%; /* Ensure full height for scrolling */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+header {
+    background-image: url('Photos/bpm.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1vh 0vw;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0vh 1vw;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5vh;
+    z-index: 1000;
+    width: 18vh;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0.5vh;
+    font-size: 0.9rem;
+    padding: 0.5vh 1vw;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Christmas Lights Effect */
+.christmas-lights {
+    color: #ff4747;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        color: #ff4747;
+        text-shadow: 0 0 5px #ff4747, 0 0 10px #ff4747, 0 0 20px #ff4747;
+    }
+    50% {
+        color: #2ecc71;
+        text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 20px #2ecc71;
+    }
+    100% {
+        color: #3498db;
+        text-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 20px #3498db;
+    }
+}
+
+header p {
+    font-size: 2rem;
+    margin: 1vh;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Container styles */
+.content {
+    position: fixed;
+    padding: 2vh 2vw;
+}
+
+.floating-image {
+    position: fixed;
+    bottom: 5vh;
+    left: 1vw;
+    width: 10vw;
+    height: auto;
+}
+
+.floating-image2 {
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    width: 10vw;
+    height: auto;
+}
+
+.container {
+    max-width: 70vw;
+    margin: 2em auto;
+    padding: 2vh 2vw;
+    background-color: rgb(17, 17, 17);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensure content appears above snowflakes */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 2rem;
+    border-bottom: 0.2vh solid #ccc;
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
+    color: #ececec;
+}
+
+p {
+    text-align: center;
+    color: #ececec;
+}
+
+.image-slider {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between the images */
+    gap: 20px; /* Space between images */
+    margin-top: 2vh;
+}
+
+.image-slider div {
+    width: 30%; /* Each image container takes up 30% of the slider's width */
+    height: 200px; /* Set a specific height for the images */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 10px; /* Make the corners of the image containers rounded */
+    position: relative;
+    overflow: hidden; /* Hide any part of the image that overflows */
+}
+
+.image-slider div img {
+    width: 100%; /* Ensure images cover the whole container */
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fill the container without distortion */
+    animation: slideImages 12s infinite;
+}
+
+.image-slider div img:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.image-slider div img:nth-child(3) {
+    animation-delay: 8s;
+}
+
+@keyframes slideImages {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 1vh 0vw;
+    margin-top: 3vh;
+    z-index: 10; /* Ensure footer is above snowflakes */
+    position: relative; /* Ensure footer stays in its own flow */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+@keyframes sleighMove {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(100vw); }
+}
+
+/* Santa Sleigh */
+.santa-sleigh {
+    position: fixed;
+    top: 10%; /* Keep it at 10% from the top of the viewport */
+    left: -10%; /* Start off-screen */
+    width: 15vw;
+    height: 30vh;
+    background-image: url('Photos/santa-animated.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sleighMove 10s linear infinite;
+    z-index: 1000; /* Ensure sleigh stays above other content */
+}
+
+/* Audio Toggle Button */
+#audio-toggle {
+    position: fixed;  /* Ensure it stays fixed relative to the viewport */
+    top: 5vh;         /* Set position from top */
+    right: 2vw;       /* Set position from right */
+    padding: 1vh 1vw;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;      /* Ensure it stays above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Make it visually pop */
+}
+
+#audio-toggle:hover {
+    background-color: #45a049;
+}
+
+  #confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+    animation: confettiAnimation 3s linear infinite;
+  }
+
+  .btn {
+    position: absolute;  /* Ensure it stays fixed relative to the viewport */
+    top: 5vh;         /* Set position from top */
+    left: 1vw;       /* Set position from left */
+    padding: 1vh 1vw;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;      /* Ensure it stays above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Make it visually pop */
+  }
+  
+  @keyframes confettiAnimation {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+
+/* Firework container styles */
+.firework-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Takes up full width */
+    height: 100vh; /* Takes up full viewport height, but can be adjusted */
+    pointer-events: none; /* Ensures no interaction with fireworks container */
+    z-index: 5;
+}
+
+/* Individual firework styles */
+.firework {
+    position: absolute;
+    width: 30px; /* Larger initial size for visibility */
+    height: 30px; /* Larger initial size for visibility */
+    background-color: red;
+    border-radius: 50%;
+    animation: explode 1.5s forwards; /* Extended animation duration */
+    opacity: 1;  /* Start fully visible */
+    pointer-events: none; /* Prevents interference with clicks */
+    z-index: 5;
+}
+
+/* Animation for explosion */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0; /* Fireworks fade away at the end of animation */
+    }
+}
+
+/* Colors for different fireworks */
+.firework-1 {
+    background-color: red;
+}
+.firework-2 {
+    background-color: yellow;
+}
+.firework-3 {
+    background-color: blue;
+}
+.firework-4 {
+    background-color: green;
+}
+.firework-5 {
+    background-color: purple;
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 0.875rem; /* Smaller font size for mobile devices */
+    }
+
+    header {
+        font-size: 1.5rem; /* Smaller font-size in header */
+    }
+
+    nav {
+        font-size: 0.9rem; /* Adjust nav font size */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce size of h1 */
+        width: 80vw; /* Use 80% of viewport width */
+        left: 10%; /* Align h1 more to the center */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr)); /* Adjust for small screens */
+    }
+}
+
+/* For screens with a maximum width of 800px */
+@media (max-width: 800px) {
+    body {
+        font-size: 1rem;
+    }
+
+    header {
+        font-size: 1.8rem; /* Slightly smaller than default */
+    }
+
+    nav {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        width: 70vw;
+        left: 15%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr)); /* Adjust gallery grid */
+    }
+}
+
+/* For screens with a maximum width of 1024px */
+@media (max-width: 1024px) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    header {
+        font-size: 2rem; /* Default header size */
+    }
+
+    nav {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        width: 60vw;
+        left: 20%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); /* Adjust gallery grid */
+    }
+}
+
+/* For screens with a maximum width of 1280px and a max height of 720px */
+@media (max-width: 1280px) and (max-height: 720px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    header {
+        font-size: 2rem; /* Maintain standard size for medium screens */
+    }
+
+    nav {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        width: 55vw;
+        left: 22%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr)); /* Adjust for larger small screens */
+    }
+}
+
+/* For screens with a width of 1280px and above */
+@media (min-width: 1281px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    header {
+        font-size: 2rem; /* Default large header font-size */
+    }
+
+    nav {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 3rem; /* Default h1 size */
+        width: 38vw;
+        left: 30%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr)); /* Gallery grid remains responsive */
+    }
+}
+/* Base styles for mobile-first design (smartphones) */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem; /* Default mobile font size */
+    }
+
+    header {
+        text-align: center;
+        padding: 2vh 2vw;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+        margin-top: 1vh;
+    }
+
+    nav a {
+        margin: 1vh 0;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust header size for mobile */
+        width: 80%; /* Adjust header width for smaller screens */
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .container {
+        width: 90%;
+        margin: 2em auto;
+        padding: 1vh 3vw; /* Adjust padding for mobile */
+    }
+
+    .image-slider {
+        display: flex;
+        flex-direction: column; /* Stack images vertically for mobile */
+        gap: 2vh; /* Increase gap between images */
+        margin-top: 2vh;
+    }
+
+    .image-slider div {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .image-slider div img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        animation: slideImages 12s infinite;
+    }
+
+    .image-slider div img:nth-child(2) {
+        animation-delay: 4s;
+    }
+
+    .image-slider div img:nth-child(3) {
+        animation-delay: 8s;
+    }
+
+    @keyframes slideImages {
+        0%, 50%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* Audio Toggle Button */
+    #audio-toggle {
+        position: absolute;
+        top: 10vh; /* Position it further down on the screen */
+        left: 50%;
+        transform: translateX(-50%); /* Center it horizontally */
+        padding: 1.5vh 3vw;
+        font-size: 1rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        z-index: 999;
+    }
+
+    #audio-toggle:hover {
+        background-color: #555;
+    }
+
+    /* Floating images */
+    .floating-image, .floating-image2 {
+        width: 25vw; /* Make the floating images smaller */
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Footer */
+    footer {
+        padding: 1vh 2vw;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    /* Adjust image slider layout */
+    .image-slider div img {
+        border-radius: 10px;
+        object-fit: cover; /* Ensure images maintain aspect ratio */
+    }
+}
