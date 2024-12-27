@@ -521,19 +521,21 @@ footer p {
         padding: 1vh 3vw; /* Adjust padding for mobile */
     }
 
-    .image-slider {
-        display: flex;
-        flex-direction: column; /* Stack images vertically for mobile */
-        gap: 2vh; /* Increase gap between images */
-        margin-top: 2vh;
-    }
-
     .image-slider div {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        overflow: hidden;
+        width: 30%; /* Each image container takes up 30% of the width */
+        height: 200px; /* Set a fixed height */
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #ccc;
+        border-radius: 5px;
         position: relative;
+        overflow: hidden; /* Hide overflowing parts of the image */
+    }
+    
+    .image-slider div img {
+        width: 100%; /* Make the image fill the container */
+        height: 100%;
+        object-fit: cover; /* Ensure image covers the entire container without distortion */
     }
 
     .image-slider div img {
