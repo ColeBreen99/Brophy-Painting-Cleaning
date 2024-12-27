@@ -486,6 +486,12 @@ footer p {
 @media (max-width: 768px) {
     body {
         font-size: 1rem; /* Default mobile font size */
+        
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
     }
 
     header {
@@ -531,12 +537,6 @@ footer p {
         position: relative;
         overflow: hidden; /* Hide overflowing parts of the image */
     }
-    
-    .image-slider div img {
-        width: 100%; /* Make the image fill the container */
-        height: 100%;
-        object-fit: cover; /* Ensure image covers the entire container without distortion */
-    }
 
     .image-slider div img {
         width: 100%;
@@ -565,9 +565,10 @@ footer p {
 
     /* Audio Toggle Button */
     #audio-toggle {
-        position: absolute;
-        top: 15vh; /* Position it further down on the screen */
+        position: fixed; /* Fixed position so it stays in place during scrolling */
+        top: 20vh; /* Position it further down on the screen */
         left: 50%;
+        right: 2vw;
         transform: translateX(-50%); /* Center it horizontally */
         padding: 1.5vh 3vw;
         font-size: 1rem;
@@ -576,7 +577,7 @@ footer p {
         border: none;
         cursor: pointer;
         border-radius: 8px;
-        z-index: 999;
+        z-index: 999; /* Ensure it is above other content */
     }
 
     #audio-toggle:hover {
@@ -585,6 +586,7 @@ footer p {
 
     /* Floating images */
     .floating-image, .floating-image2 {
+        position: fixed;
         width: 25vw; /* Make the floating images smaller */
         bottom: 5vh;
         left: 50%;
