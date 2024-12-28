@@ -1,0 +1,296 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(90deg, #1a1919, #2b2a2a);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 2rem; /* Increased font-size to use rem */
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+header {
+    background: linear-gradient(90deg, #1a1919, #2b2a2a);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 2rem; /* Increased font-size to use rem */
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 1.25rem; /* Convert 20px to rem */
+}
+
+nav a {
+    padding: 0.625rem 1rem; /* Convert px to rem */
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle; /* Align vertically */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Menu Section */
+.dropdown {
+    position: relative; /* Enables dropdown-menu to position relative to parent */
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.625rem;
+    border-radius: 0.3125rem; /* Convert 5px to rem */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
+    margin-top: 0.3125rem; /* Convert 5px to rem */
+    z-index: 1000;
+    width: 9.375rem; /* Convert 150px to rem */
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0.3125rem 0; /* Convert 5px to rem */
+    font-size: 0.9rem;
+    padding: 0.3125rem 0.625rem; /* Convert 5px and 10px to rem */
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.3125rem; /* Convert 5px to rem */
+}
+
+/* Display dropdown menu when hovering over parent .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Hero Section */
+#hero {
+    background: url('Photos/cleaning.webp') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#hero .btn {
+    background-color: #4CAF50;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#hero .btn:hover {
+    background-color: #45a049;
+}
+
+/* Services Section */
+#services {
+    padding: 3rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: flex-start; /* Align items to the top of the container */
+}
+
+.gallery-item {
+    width: 30%; /* Each gallery item takes up 30% of the width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents images from overflowing the container */
+    border-radius: 8px;
+    display: flex; /* Use flex to display images side by side */
+    justify-content: space-between; /* Space images out */
+    height: 95vh;
+}
+
+.gallery-item img {
+    width: 100%; /* Ensure images are side by side within the container */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without distortion */
+    border-radius: 8px;
+}
+
+.gallery-item img.before {
+    margin-right: 4%; /* Add spacing between before and after images */
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 100%; /* Stack the images on smaller screens */
+        height: 100%;
+    }
+
+    .gallery-item img {
+        width: 100%; /* Make images fill the container */
+        margin-right: 0; /* Remove margin on smaller screens */
+    }
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f9f9f9;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-cards,
+    .testimonials,
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card,
+    .testimonial,
+    .gallery-item {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    #hero .btn {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}
