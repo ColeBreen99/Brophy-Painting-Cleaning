@@ -201,6 +201,25 @@ nav a:hover {
     margin-right: 4%; /* Add spacing between before and after images */
 }
 
+/* Hamburger icon styles */
+#hamburger-menu {
+    display: none;  /* Hide the hamburger by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: relative; /* Ensure it's not hidden behind other elements */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+#hamburger-menu div {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
 @media (max-width: 768px) {
     .gallery-item {
         width: 100%; /* Stack the images on smaller screens */
@@ -210,6 +229,51 @@ nav a:hover {
     .gallery-item img {
         width: 100%; /* Make images fill the container */
         margin-right: 0; /* Remove margin on smaller screens */
+    }
+
+    .line {
+        display: flex;
+        justify-content: center;
+        background-color: #1a1919;
+        width: 90vw;
+        height: 1vh;
+    }
+
+    #hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 5vh; /* Adjust if needed */
+        right: 2vw; /* Adjust if needed */
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide by default */
+        position: absolute; /* Position relative to the parent */
+        top: 5vh; /* Adjust this to move the dropdown below the hamburger button */
+        left: 46vw;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+        padding: 10px;
+        width: 25vw; /* Set a fixed width for the dropdown menu */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+        z-index: 10000; /* Make sure it's below the hamburger button */
+    }
+
+    /* Make sure dropdown content is not stretched too much */
+    .dropdown-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
     }
 }
 

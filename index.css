@@ -482,6 +482,26 @@ footer p {
         grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr)); /* Gallery grid remains responsive */
     }
 }
+
+/* Hamburger icon styles */
+#hamburger-menu {
+    display: none;  /* Hide the hamburger by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: relative; /* Ensure it's not hidden behind other elements */
+    z-index: 10; /* Ensure it stays on top */
+}
+
+#hamburger-menu div {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
 /* Base styles for mobile-first design (smartphones) */
 @media (max-width: 768px) {
     body {
@@ -506,6 +526,43 @@ footer p {
         text-decoration: none;
         color: white;
         font-weight: bold;
+    }
+
+    #hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 5vh; /* Adjust if needed */
+        right: 2vw; /* Adjust if needed */
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide by default */
+        position: absolute; /* Position relative to the parent */
+        top: 3vh; /* Adjust this to move the dropdown below the hamburger button */
+        left: 32vw;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+        padding: 10px;
+        width: 150px; /* Set a fixed width for the dropdown menu */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+        z-index: 5; /* Make sure it's below the hamburger button */
+    }
+
+    /* Make sure dropdown content is not stretched too much */
+    .dropdown-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
     }
 
     h1 {
@@ -572,6 +629,9 @@ footer p {
         cursor: pointer;
         border-radius: 8px;
         z-index: 999; /* Ensure it is above other content */
+        display: flex;
+        width: 30vw;
+        justify-content: center;
     }
 
     #audio-toggle:hover {
