@@ -223,36 +223,23 @@ footer p {
     100% { transform: translateX(100vw); }
 }
 
-/* Santa Sleigh */
-.santa-sleigh {
-    position: fixed;
-    top: 10%; /* Keep it at 10% from the top of the viewport */
-    left: -10%; /* Start off-screen */
-    width: 15vw;
-    height: 30vh;
-    background-image: url('Photos/santa-animated.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: sleighMove 10s linear infinite;
-    z-index: 1000; /* Ensure sleigh stays above other content */
-}
-
 /* Audio Toggle Button */
 #audio-toggle {
-    position: fixed;  /* Ensure it stays fixed relative to the viewport */
-    top: 5vh;         /* Set position from top */
-    right: 2vw;       /* Set position from right */
-    padding: 1vh 1vw;
-    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    position: relative; /* Keeps the button in place during scroll */
+    top: 5vh; /* Or change to a more exact pixel value if needed */
+    left: 0%;
+    padding: 1.5vh 3vw;
+    font-size: 1rem;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000;      /* Ensure it stays above other content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Make it visually pop */
+    border-radius: 8px;
+    z-index: 9999; /* Ensure it is above all other content */
+    width: 30vw;
 }
-
 #audio-toggle:hover {
     background-color: #45a049;
 }
@@ -357,30 +344,6 @@ footer p {
 }
 .firework-5 {
     background-color: purple;
-}
-
-@media (max-width: 640px) {
-    body {
-        font-size: 0.875rem; /* Smaller font size for mobile devices */
-    }
-
-    header {
-        font-size: 1.5rem; /* Smaller font-size in header */
-    }
-
-    nav {
-        font-size: 0.9rem; /* Adjust nav font size */
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Reduce size of h1 */
-        width: 80vw; /* Use 80% of viewport width */
-        left: 10%; /* Align h1 more to the center */
-    }
-
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr)); /* Adjust for small screens */
-    }
 }
 
 /* For screens with a maximum width of 800px */
@@ -614,13 +577,12 @@ footer p {
         }
     }
 
-    /* Audio Toggle Button */
     #audio-toggle {
-        position: fixed; /* Fixed position so it stays in place during scrolling */
-        top: 20vh; /* Position it further down on the screen */
-        left: 50%;
-        right: 2vw;
-        transform: translateX(-50%); /* Center it horizontally */
+        display: flex;
+        justify-content: center;
+        position: relative; /* Keeps the button in place during scroll */
+        top: -40vh; /* Or change to a more exact pixel value if needed */
+        left: 0%;
         padding: 1.5vh 3vw;
         font-size: 1rem;
         background-color: #4CAF50;
@@ -628,10 +590,8 @@ footer p {
         border: none;
         cursor: pointer;
         border-radius: 8px;
-        z-index: 999; /* Ensure it is above other content */
-        display: flex;
+        z-index: 9999; /* Ensure it is above all other content */
         width: 30vw;
-        justify-content: center;
     }
 
     #audio-toggle:hover {
@@ -640,11 +600,12 @@ footer p {
 
     /* Floating images */
     .floating-image, .floating-image2 {
-        position: fixed;
+        display: flex;
+        justify-content: center;
+        position: relative;
         width: 25vw; /* Make the floating images smaller */
-        bottom: 5vh;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: -38vh;
+        left: 0%;
     }
 
     /* Footer */
