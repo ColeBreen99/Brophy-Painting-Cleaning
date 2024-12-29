@@ -229,7 +229,6 @@ footer p {
     justify-content: center;
     position: relative; /* Keeps the button in place during scroll */
     top: 5vh; /* Or change to a more exact pixel value if needed */
-    left: 0%;
     padding: 1.5vh 3vw;
     font-size: 1rem;
     background-color: #4CAF50;
@@ -238,7 +237,6 @@ footer p {
     cursor: pointer;
     border-radius: 8px;
     z-index: 9999; /* Ensure it is above all other content */
-    width: 30vw;
 }
 #audio-toggle:hover {
     background-color: #45a049;
