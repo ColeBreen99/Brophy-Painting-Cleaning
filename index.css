@@ -115,12 +115,6 @@ header p {
     font-family: 'Dancing Script', cursive;
 }
 
-/* Container styles */
-.content {
-    position: fixed;
-    padding: 2vh 2vw;
-}
-
 .floating-image {
     position: fixed;
     bottom: 5vh;
@@ -614,5 +608,87 @@ footer p {
 
     footer p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #audio-toggle {
+        display: flex;
+        justify-content: center;
+        position: relative; /* Keeps the button in place during scroll */
+        top: -50vh; /* Or change to a more exact pixel value if needed */
+        left: 0%;
+        padding: 1.5vh 3vw;
+        font-size: 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        z-index: 5; /* Ensure it is above all other content */
+        width: 50vw;
+    }
+
+    #audio-toggle:hover {
+        background-color: #45a049;
+    }
+
+    /* Floating images */
+    .floating-image {
+        width: 30vw; /* Make the floating images smaller */
+        top: -10.7%;
+        left: -70%;
+    }
+    .floating-image2 {
+        width: 35vw;
+        height: 8vh;
+        top: -3%;
+        left: 25%;
+        background: fixed;
+        background-color: rgb(17, 17, 17);
+        border-style: solid; 
+        border-color: rgb(255, 123, 0);
+        border-radius: 30%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 5vh; /* Adjust if needed */
+        right: 2vw; /* Adjust if needed */
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide by default */
+        position: absolute; /* Position relative to the parent */
+        top: 3vh; /* Adjust this to move the dropdown below the hamburger button */
+        left: 28vw;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+        padding: 10px;
+        width: 100px; /* Set a fixed width for the dropdown menu */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+        z-index: 6; /* Make sure it's below the hamburger button */
+    }
+
+    /* Make sure dropdown content is not stretched too much */
+    .dropdown-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
     }
 }

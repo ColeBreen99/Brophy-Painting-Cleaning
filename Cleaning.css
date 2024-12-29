@@ -358,3 +358,9 @@ footer p {
         font-size: 1.2rem;
     }
 }
+
+@media (max-width: 400px) {
+    nav a {
+        font-size: 0.8rem;
+    }
+}

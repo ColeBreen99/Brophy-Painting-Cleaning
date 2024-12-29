@@ -216,3 +216,60 @@ nav a:hover {
         background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
     }
 }
+
+@media (max-width: 400px) {
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    #hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 5vh; /* Adjust if needed */
+        right: 2vw; /* Adjust if needed */
+        z-index: 1000;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide by default */
+        position: absolute; /* Position relative to the parent */
+        top: 5vh; /* Adjust this to move the dropdown below the hamburger button */
+        left: 35vw;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+        padding: 10px;
+        width: 100px; /* Set a fixed width for the dropdown menu */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+        z-index: 5; /* Make sure it's below the hamburger button */
+    }
+
+    /* Make sure dropdown content is not stretched too much */
+    .dropdown-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu li {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .dropdown-menu li:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    }
+
+    .floating-image {
+        position: absolute;
+        top: 20%;
+        left: -30%;
+        width: 32vw;
+        height: 7vh;
+    }
+
+    .content {
+        display: flex;
+        position: absolute;
+        left: 34%;
+    }
+}

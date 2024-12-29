@@ -50,7 +50,7 @@ h1 {
     top: 0;
     left: 30%;
     width: 38vw;
-    z-index: 1000;
+    z-index: 4;
     border-radius: 1.25rem; /* Convert 20px to rem */
     font-size: 3rem;
 }
@@ -289,42 +289,6 @@ nav a:hover {
     padding: 1.25rem; /* Convert 20px to rem */
 }
 
-.floating-image {
-    position: relative;
-    bottom: 18vh; /* Using vh for vertical positioning */
-    left: 2.5vw; /* Using vw for left positioning */
-    width: 10vw; /* Using vw for responsive width */
-    height: auto;
-}
-
-/* For screens with a maximum width of 640px */
-@media (max-width: 640px) {
-    body {
-        font-size: 0.875rem; /* Smaller font size for mobile devices */
-    }
-
-    header {
-        font-size: 1.5rem; /* Smaller font-size in header */
-    }
-
-    nav {
-        font-size: 0.9rem; /* Adjust nav font size */
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Reduce size of h1 */
-        width: 80vw; /* Use 80% of viewport width */
-        left: 10%; /* Align h1 more to the center */
-    }
-    .mobile {
-        font-size: 0.5rem;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr)); /* Adjust for small screens */
-    }
-}
-
 /* For screens with a maximum width of 800px */
 @media (max-width: 800px) {
     body {
@@ -457,13 +421,23 @@ nav a:hover {
         display: none; /* Hide by default */
         position: absolute; /* Position relative to the parent */
         top: 5vh; /* Adjust this to move the dropdown below the hamburger button */
-        left: 50vw;
+        left: 35vw;
         background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
         padding: 10px;
-        width: 150px; /* Set a fixed width for the dropdown menu */
+        width: 100px; /* Set a fixed width for the dropdown menu */
         border-radius: 5px; /* Rounded corners */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
         z-index: 5; /* Make sure it's below the hamburger button */
+    }
+
+    .dropdown-menu a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin: 0.3125rem 0; /* Convert 5px to rem */
+        font-size: 0.9rem;
+        padding: 0.3125rem 0.625rem; /* Convert 5px and 10px to rem */
+        z-index: 6;
     }
 
     /* Make sure dropdown content is not stretched too much */
@@ -473,6 +447,16 @@ nav a:hover {
         margin: 0;
     }
 
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 0.3125rem; /* Convert 5px to rem */
+    }
+    
+    /* Display dropdown menu when hovering over parent .dropdown */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
     .dropdown-menu li {
         padding: 8px;
         text-align: center;
@@ -480,5 +464,50 @@ nav a:hover {
 
     .dropdown-menu li:hover {
         background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    }
+
+    .floating-image {
+        position: relative;
+        bottom: 17vh;
+        left: -2vw;
+        width: 10vw;
+        height: 4.5vh;
+        width: 20vw;
+    }
+}
+
+/* For screens with a maximum width of 640px */
+@media (max-width: 640px) {
+    body {
+        font-size: 0.875rem; /* Smaller font size for mobile devices */
+    }
+
+    header {
+        font-size: 1.5rem; /* Smaller font-size in header */
+    }
+
+    nav {
+        font-size: 0.9rem; /* Adjust nav font size */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce size of h1 */
+        width: 80vw; /* Use 80% of viewport width */
+        left: 1%; /* Align h1 more to the center */
+    }
+    .mobile {
+        font-size: 0.7rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr)); /* Adjust for small screens */
+    }
+
+    .floating-image {
+        position: relative;
+        bottom: 0vh;
+        left: 25vw;
+        height: 9vh;
+        width: 40vw;
     }
 }
